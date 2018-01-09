@@ -1,0 +1,8 @@
+# install these modules by using: pip install -r requirements.txt
+
+# Flask (for instantiating the server and Jinja2 templating)
+flask
+# SQLAlchemy (for interacting with MySQL)
+flask-sqlalchemy
+# SQL driver for Python (SQLAlchemy dependancy)
+pymysql

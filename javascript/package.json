@@ -1,0 +1,33 @@
+{
+  "name": "vamp-log",
+  "version": "1.0.0",
+  "description": "Build project for a daily log system to keep track of and promote coding progress",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-vampiire/vamp-log.git"
+  },
+  "keywords": [
+    "vamp",
+    "vampiire",
+    "the-vampiire",
+    "python",
+    "livecast",
+    "javascript",
+    "live-cast"
+  ],
+  "author": "Vampiire",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-vampiire/vamp-log/issues"
+  },
+  "homepage": "https://github.com/the-vampiire/vamp-log#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mustache": "^2.3.0",
+    "sequelize": "^4.29.3"
+  }
+}
