@@ -19,7 +19,13 @@ Goal - Build a personal coding log system
     2) I can add a comment to an item when I mark it "completed"
     3) I can view a streak counter to keep track of how many days in a row I have completed a log
 
-Using Flask/Jinja2 and MySQL/SQLAlchemy
+Modules 
+  - Flask (server)
+  - Jinja2 (templating) 
+  - MySQL (data storage)
+  - SQLAlchemy (ORM - interacting with MySQL)
+Hosting 
+  - https://www.pythonanywhere.com/
 """
 
 

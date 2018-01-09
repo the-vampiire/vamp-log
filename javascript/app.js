@@ -18,5 +18,12 @@
     2) I can add a comment to an item when I mark it "completed"
     3) I can view a streak counter to keep track of how many days in a row I have completed a log
  * 
- * Using Express/Mustache and MySQL/Sequelize
+ * Packages 
+ *   - Node/Express (server)
+ *   - Mustache (templating)
+ *   - MySQL (data persistence) 
+ *   - Sequelize (ORM - for interacting with MySQL)
+ * 
+ * Hosting
+ *   - https://heroku.com
  */
