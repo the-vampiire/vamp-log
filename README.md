@@ -24,6 +24,9 @@ A dual-build project to learn the similarities between Python and Javascript. Ea
 - A piece of code that I am proud of from today 
   - [embedded in the page and collapsible]
 
+[NOTES]
+- Additional notes for the daily log entry
+
 2) I can view my previous logs in a continuous timeline
 - The first item in the timeline will display the log from the previous day
 
