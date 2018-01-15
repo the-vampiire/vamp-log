@@ -1,9 +1,9 @@
 # Daily Log Project
 
-A dual-build project to learn the similarities between Python and Javascript (Node). Both will use analogous technologies.
+A dual-build project to learn the similarities between Python and Javascript. Each using analogous technologies.
 
-## Goal - Build two full-stack projects using Python and Javascript (Node). 
-- The final result for both being a daily log system to keep track of and promote coding progress
+## Project Goal
+#### A daily log system to keep track of and promote coding progress in a consistent, measurable and easy to use application.
 
 ### MVP user stories
   1) I can create a persistent daily log with the following fields
@@ -18,7 +18,7 @@ A dual-build project to learn the similarities between Python and Javascript (No
 
 [PATH]
 - A resource URL to guide me through what I am stuck on or want to learn 
-  - [1-3 links]
+  - [1+ links]
 
 [RECOGNITION]
 - A piece of code that I am proud of from today 
@@ -59,3 +59,21 @@ Hosting
 
  Hosting
    - https://heroku.com
+
+## Database Structure [MySQL]
+- Daily Logs have a one-to-many relationship with Paths
+  - each [one] daily log can have multiple [many] paths (urls)
+- `created_at` stored in 'Month[name] Day, Year' string format
+
+### Tables [generated using https://www.tablesgenerator.com/markdown_tables#]
+#### daily_logs
+| column | id                | accomplishment | challenge     | recognition | notes | created_at   |
+|-------:|-------------------|----------------|---------------|-------------|-------|--------------|
+|   type | INT [primary key] | VARCHAR [140]  | VARCHAR [140] | TEXT        | TEXT  | VARCHAR [25] |
+|        |                   |                |               |             |       |              |
+
+#### paths
+| column | id                | daily_log_id      | reference_url |
+|-------:|-------------------|-------------------|---------------|
+|   type | INT [primary key] | INT [foreign key] | TEXT |
+|        |                   |                   |               |
