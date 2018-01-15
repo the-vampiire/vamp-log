@@ -41,8 +41,43 @@ class Path(db.Model):
   daily_log_id = db.Column(db.Integer, db.ForeignKey('daily_logs.id'), nullable = False)
   reference_url = db.Column(db.Text, nullable = False)
 
-  if __name__ == "__main__":
-    app.run(port = 3000)
+# Database helpers
+def create_daily_log(paths, **values):
+  new_daily_log = DailyLog(**values) # create log by "spreading" the keyword argument values
+  paths = [Path(reference_url = path, daily_log_id = new_daily_log.id) for path in paths]
+
+  new_daily_log.paths.extend(paths) # associate the new_daily_log to the paths
+  db.session.add(new_daily_log) # stage the new_daily_log
+  db.session.add_all(paths) # stage the paths
+  db.session.commit() # save to the database
+  return { "daily_log": new_daily_log, "paths": paths }
+
+
+# Route helpers
+def make_progress(form_data):
+  accomplishment = form_data['accomplishment']
+  challenge = form_data['challenge']
+  recognition = form_data['recognition']
+  notes = form_data['notes']
+
+  # https://stackoverflow.com/questions/24808660/sending-a-form-array-to-flask
+  paths = form_data.getlist('paths') 
+
+  return create_daily_log(paths, accomplishment = accomplishment, challenge = challenge, recognition = recognition, notes = notes)
+
+
+# Routes
+@app.route("/", methods = ["GET", "POST"])
+def index():
+  # handle POST update - http://flask.pocoo.org/docs/0.12/quickstart/#variable-rules
+  if request.method == "POST":
+    db_response = make_progress(request.form)
+    return render_template("index.html", daily_log = db_response["daily_log"], paths = db_response["paths"])
+  elif request.method == "GET":
+    return render_template("index.html")
+
+if __name__ == "__main__":
+  app.run(port = 3000)
 
 
   

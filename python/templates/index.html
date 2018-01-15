@@ -1,0 +1,38 @@
+{{ daily_log.accomplishment }}
+{% for path in paths %}
+<li>
+  {{ path.reference_url }}
+</li>
+{% endfor %}
+
+<form action ="/" method="POST">
+  <label>
+    Accomplishment
+    <input type ="text" name ="accomplishment" required>
+  </label>
+  <label>
+    Challenge
+    <input type ="text" name ="challenge" required>
+  </label>
+  <label>
+    Path
+    <input type ="text" name ="paths" required>
+  </label>
+  <label>
+    Path
+    <input type ="text" name ="paths">
+  </label>
+  <label>
+    Path
+    <input type ="text" name ="paths">
+  </label>
+  <label>
+    Recognition
+    <input type ="text" name ="recognition">
+  </label>
+  <label>
+      Notes
+      <input type ="text" name ="notes">
+    </label>
+  <input type ="submit" value ="Make Progress">
+</form>
